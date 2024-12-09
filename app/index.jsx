@@ -11,6 +11,11 @@ const app = () => {
         style={styles.image}
         >
         <Text style={styles.title}>Coffee Shop</Text>
+        <Link style={{ marginHorizontal: "auto"}} href="/menu" asChild> 
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Menu</Text>
+          </Pressable> 
+        </Link> 
         <Link style={{ marginHorizontal: "auto"}} href="/contact" asChild> 
           <Pressable style={styles.button}>
             <Text style={styles.buttonText}>Contact Us</Text>
