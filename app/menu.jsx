@@ -12,7 +12,7 @@ export default function MenuScreen() {
 
     const separatorComp = <View style={styles.separator} />
     //const headerComp = <Text>Top of List</Text>
-    const footerComp = <Text>End of List</Text>
+    const footerComp = <Text style={{ color: theme.text }}>End of List</Text>
 
     return (
         <Container>
@@ -31,11 +31,11 @@ export default function MenuScreen() {
                         <View style={styles.menuTextRow}>
                             <Text style={[styles.menuItemTitle, styles.menuItemText]}> { item.title } </Text>
                             <Text style={styles.menuItemText}> { item.description } </Text>
-                            <Image 
+                        </View>
+                        <Image 
                                 source={MENU_IMAGES[item.id - 1]}
                                 style={styles.menuImage}
                             />
-                        </View>
                     </View>
                 )}
             />
@@ -76,7 +76,23 @@ function createStyles(theme, colorScheme) {
             marginHorizontal: 'auto',
         },
         menuTextRow: {
-            
+            minwidth: '65%',
+            paddingTop: 10,
+            paddingLeft: 10,
+            paddingRight: 5,
+            flexGrow: 1,
+        },
+        menuItemTitle: {
+            fontSize: 18,
+            textDecorationLine: 'underline',
+        },
+        menuItemText: {
+            color: theme.text,
+        },
+        menuImage: {
+            width: 100,
+            height: 100,
+            alignItems: 'center',
         }
     })
 }
